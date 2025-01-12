@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dishes</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .recipe-card {
+            background-color: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            text-align: center;
+            margin: 10px;
+            padding: 10px;
+        }
+        .recipe-card img {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+        .recipe-card h5 {
+            margin-top: 10px;
+            font-size: 18px;
+            color: #333;
+        }
+        .recipe-card p {
+            font-size: 14px;
+            color: #555;
+        }
+        .recipe-card button {
+            background-color: #593811;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            padding: 5px 15px;
+            margin-top: 10px;
+            transition: all 0.3s;
+        }
+        .recipe-card button:hover {
+            background-color: #495057;
+        }
+        .row {
+            justify-content: center;
+        }
+        .card {
+            margin-bottom: 20px;
+        }
+        .card-img-top {
+            height: 250px;
+        }
+        .navbar-toggler {
+            margin-left: auto;
+        }
+        .logo img {
+            width: 75px;
+        }
+        .fa-star {
+            font-size: 20px;
+            color: gray;
+            cursor: pointer;
+        }
+        .fa-star.checked {
+            color: gold;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Linh's Recipes</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="dishes.html">Dishes</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="submit.html">Submit Recipe</a>
+                    </li>
+                </ul>
+                <div class="logo">
+                    <img src="linhscatering.png" alt="Linh's Catering">
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Recipe Categories -->
+    <div class="container mt-4">
+        <div class="row">
+            <!-- Pho Bo -->
+            <div class="col-md-4">
+                <div class="card">
+                    <img src="pho.jpg" class="card-img-top" alt="Pho Bo">
+                    <div class="card-body">
+                        <h5 class="card-title">Vietnamese Beef Pho (Phở Bò)</h5>
+                        <p class="card-text">A flavorful beef noodle soup with fresh herbs, spices, and a savory broth.</p>
+                        <button data-bs-toggle="modal" data-bs-target="#recipePhoBo">Recipe &raquo;</button>
+
+                        <!-- Rating for Pho Bo -->
+                        <div class="rating">
+                            <i class="fa fa-star" data-index="1"></i>
+                            <i class="fa fa-star" data-index="2"></i>
+                            <i class="fa fa-star" data-index="3"></i>
+                            <i class="fa fa-star" data-index="4"></i>
+                            <i class="fa fa-star" data-index="5"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Banh Mi -->
+            <div class="col-md-4">
+                <div class="card">
+                    <img src="banhmi.jpg" class="card-img-top" alt="Banh Mi">
+                    <div class="card-body">
+                        <h5 class="card-title">Bánh mì</h5>
+                        <p class="card-text">A Vietnamese sandwich combining a crispy baguette with savory meats, pickled vegetables, and herbs.</p>
+                        <button data-bs-toggle="modal" data-bs-target="#recipeBanhMi">Recipe &raquo;</button>
+
+                        <!-- Rating for Banh Mi -->
+                        <div class="rating">
+                            <i class="fa fa-star" data-index="1"></i>
+                            <i class="fa fa-star" data-index="2"></i>
+                            <i class="fa fa-star" data-index="3"></i>
+                            <i class="fa fa-star" data-index="4"></i>
+                            <i class="fa fa-star" data-index="5"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Mi Quang -->
+            <div class="col-md-4">
+                <div class="card">
+                    <img src="miquang.jpg" class="card-img-top" alt="Mi Quang">
+                    <div class="card-body">
+                        <h5 class="card-title">Mi Quang</h5>
+                        <p class="card-text">A vibrant noodle dish with shrimp, pork, herbs, and crunchy peanuts.</p>
+                        <button data-bs-toggle="modal" data-bs-target="#recipeMiQuang">Recipe &raquo;</button>
+
+                        <!-- Rating for Mi Quang -->
+                        <div class="rating">
+                            <i class="fa fa-star" data-index="1"></i>
+                            <i class="fa fa-star" data-index="2"></i>
+                            <i class="fa fa-star" data-index="3"></i>
+                            <i class="fa fa-star" data-index="4"></i>
+                            <i class="fa fa-star" data-index="5"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Bun Thang -->
+            <div class="col-md-4">
+                <div class="card">
+                    <img src="bunthang.jpg" class="card-img-top" alt="Bun Thang">
+                    <div class="card-body">
+                        <h5 class="card-title">Bún Thang</h5>
+                        <p class="card-text">A Hanoi-style noodle soup with chicken, pork, egg, and herbs.</p>
+                        <button data-bs-toggle="modal" data-bs-target="#recipeBunThang">Recipe &raquo;</button>
+
+                        <!-- Rating for Bun Thang -->
+                        <div class="rating">
+                            <i class="fa fa-star" data-index="1"></i>
+                            <i class="fa fa-star" data-index="2"></i>
+                            <i class="fa fa-star" data-index="3"></i>
+                            <i class="fa fa-star" data-index="4"></i>
+                            <i class="fa fa-star" data-index="5"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Rau Muong -->
+            <div class="col-md-4">
+                <div class="card">
+                    <img src="raumuong.jpg" class="card-img-top" alt="Rau Muong">
+                    <div class="card-body">
+                        <h5 class="card-title">Rau muống</h5>
+                        <p class="card-text">Water spinach stir-fried with garlic or used in soups.</p>
+                        <button data-bs-toggle="modal" data-bs-target="#recipeRauMuong">Recipe &raquo;</button>
+
+                        <!-- Rating for Rau Muong -->
+                        <div class="rating">
+                            <i class="fa fa-star" data-index="1"></i>
+                            <i class="fa fa-star" data-index="2"></i>
+                            <i class="fa fa-star" data-index="3"></i>
+                            <i class="fa fa-star" data-index="4"></i>
+                            <i class="fa fa-star" data-index="5"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal for Pho Bo Recipe -->
+    <div class="modal fade" id="recipePhoBo" tabindex="-1" aria-labelledby="recipePhoBoLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="recipePhoBoLabel">Pho Bo Recipe</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="
+                    <button type="buttonclass="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <h6>Ingredients:</h6>
+                    <ul>
+                        <li>Beef broth (preferably simmered for several hours)</li>
+                        <li>Rice noodles (Bánh phở)</li>
+                        <li>Thinly sliced beef (sirloin or brisket)</li>
+                        <li>Herbs like cilantro, Thai basil, and mint</li>
+                        <li>Bean sprouts</li>
+                        <li>Lime wedges</li>
+                        <li>Chili peppers</li>
+                        <li>Fish sauce, hoisin sauce, and sriracha sauce</li>
+                    </ul>
+                    <h6>Instructions:</h6>
+                    <p>1. Cook the rice noodles then you may also drain and set aside.</p>
+                    <p>2. In a large pot (atleast around 6L), bring the beef broth to a boil, and then reduce to a simmer for a minute or so.</p>
+                    <p>3. Add the thinly sliced beef to the hot broth for a few seconds to cook it.</p>
+                    <p>4. Place the cooked noodles in a bowl, pour the hot broth and beef over the noodles.</p>
+                    <p>5. Garnish with fresh herbs, bean sprouts, lime, and chili peppers. Serve with fish sauce, hoisin, and sriracha on the side.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal for Banh Mi Recipe -->
+    <div class="modal fade" id="recipeBanhMi" tabindex="-1" aria-labelledby="recipeBanhMiLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="recipeBanhMiLabel">Banh Mi Recipe</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <h6>Ingredients:</h6>
+                    <ul>
+                        <li>Baguette (light and crispy)</li>
+                        <li>Char siu pork or grilled chicken</li>
+                        <li>Pickled carrots and daikon</li>
+                        <li>Cucumber slices</li>
+                        <li>Fresh cilantro and mint</li>
+                        <li>Chili peppers (optional)</li>
+                        <li>Mayonnaise or pate</li>
+                    </ul>
+                    <h6>Instructions:</h6>
+                    <p>1. Slice the baguette in half and spread a layer of mayonnaise or pate on each side.</p>
+                    <p>2. Layer the cooked pork or grilled chicken inside the baguette.</p>
+                    <p>3. Add pickled carrots, daikon, cucumber, fresh cilantro, mint, and chili peppers (if using).</p>
+                    <p>4. Close the sandwich and enjoy! It's a perfect balance of flavors and textures.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal for Mi Quang Recipe -->
+    <div class="modal fade" id="recipeMiQuang" tabindex="-1" aria-labelledby="recipeMiQuangLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="recipeMiQuangLabel">Mi Quang Recipe</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <h6>Ingredients:</h6>
+                    <ul>
+                        <li>Yellow rice noodles (Mi Quang noodles)</li>
+                        <li>Shrimp and pork (or chicken)</li>
+                        <li>Herbs (Vietnamese mint, cilantro)</li>
+                        <li>Roasted peanuts</li>
+                        <li>Rice crackers (bánh tráng)</li>
+                        <li>Fish sauce, lime, and chili for seasoning</li>
+                    </ul>
+                    <h6>Instructions:</h6>
+                    <p>1. Boil the noodles and drain them.</p>
+                    <p>2. Stir-fry shrimp, pork, or chicken with garlic and shallots until cooked.</p>
+                    <p>3. Add a little broth, and then mix the noodles into the stir-fried meat and herbs.</p>
+                    <p>4. Serve with roasted peanuts, rice crackers, and lime on the side. Enjoy!</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal for Bun Thang Recipe -->
+    <div class="modal fade" id="recipeBunThang" tabindex="-1" aria-labelledby="recipeBunThangLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="recipeBunThangLabel">Bun Thang Recipe</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <h6>Ingredients:</h6>
+                    <ul>
+                        <li>Thin rice noodles</li>
+                        <li>Chicken breast, shredded</li>
+                        <li>Egg, boiled and sliced</li>
+                        <li>Vietnamese pork (Giò lụa)</li>
+                        <li>Fish sauce and lime</li>
+                        <li>Herbs (Vietnamese cilantro, green onions)</li>
+                    </ul>
+                    <h6>Instructions:</h6>
+                    <p>1. Cook the rice noodles according to the instructions.</p>
+                    <p>2. Prepare the shredded chicken and slice the pork and boiled eggs.</p>
+                    <p>3. Boil the broth with fish sauce and lime for a light, flavorful base.</p>
+                    <p>4. Combine the noodles, chicken, pork, and egg in a bowl, then pour the hot broth over it.</p>
+                    <p>5. Garnish with fresh herbs and enjoy the light yet savory soup!</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal for Rau Muong Recipe -->
+    <div class="modal fade" id="recipeRauMuong" tabindex="-1" aria-labelledby="recipeRauMuongLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="recipeRauMuongLabel">Rau Muong Recipe</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <h6>Ingredients:</h6>
+                    <ul>
+                        <li>Water spinach (Rau muống)</li>
+                        <li>Garlic, minced</li>
+                        <li>Fish sauce and soy sauce</li>
+                        <li>Chili peppers (optional)</li>
+                    </ul>
+                    <h6>Instructions:</h6>
+                    <p>1. Wash the water spinach thoroughly and cut into manageable pieces.</p>
+                    <p>2. Heat oil in a pan and sauté minced garlic until golden.</p>
+                    <p>3. Add the water spinach and stir-fry for a few minutes, seasoning with fish sauce and soy sauce.</p>
+                    <p>4. Garnish with chili peppers if desired, and serve as a side dish to any meal.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+ <script>
+        document.querySelectorAll('.rating .fa-star').forEach(star => {
+            star.addEventListener('click', function() {
+      let index = parseInt(this.getAttribute('data-index'));
+    let stars = this.parentElement.children;
+
+                for (let i = 0; i < stars.length; i++) {
+         if (i < index) {
+                        stars[i].classList.add('checked');
+                    } else {
+             stars[i].classList.remove('checked');
+                }
+         }
+            });
+        });
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
